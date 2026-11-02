@@ -39,6 +39,16 @@ d2 = a*b + c
 print('d1', d1, 'd2', d2)
 print('slope wrt c', (d2 - d1) / h)   # ≈1: d moves 1-for-1 with c (it's just added)
 
+#----- Part 2b: nudge a and b separately --------
+#prediction: slope wrt a = -3, slope wrt b = 2
+a, b, c = 2.0, -3.0, 10.0                  #reset since part 2 changed c
+h = 0.0001
+d1 = a*b + c                               
+d2 = (a + h)*b + c                         #nudge only a
+print('slope wrt a', (d2 - d1)/h)
+d3 = a*(b + h) + c                         #nudge only b
+print('slope wrt b', (d3 - d1)/h)
+
 
 
 
